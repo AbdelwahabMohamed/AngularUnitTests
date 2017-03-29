@@ -20,3 +20,5 @@ to get instances of any thing in the modules that has been configured by the app
 -it will load in sequence Angular -> ngMock -> all configured modules
 - _[something]_ naming convention if we passed the function name x or _x_ , the inject will try to load something called x from the
 pre-configured module.
+-When using $http within a test, ngMock replaces the $httpBackendProvider with a mocked one, so no real http calles are made
+that means we have to configure the mocked backend provider ourselves.
