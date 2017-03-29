@@ -1,0 +1,22 @@
+1-install Jasmine: npm install --save-dev jasmine
+2-if you want the spec runner, download it from the standalone veriosn website and unzipp the content to a local directory
+3-install karma: npm install --save-dev karma
+4-install karma command line runner via npm: npm install -g karma-cli
+5-install the jasmine add-on for karma and also the chrome launcher: npm install --save-dev karma-jasmine karma-chrome-launcher
+6-init karma to set up stuff like watching files, file paths, etc...using: Karma init
+7-add the karma start command to the test section in packages.json: "test": "karam start karma.conf.js" //I tried with the relative path and 
+it didn`t work
+8-install bower first globally then locally  to install client-side packages.
+9-initialize bower to create the bower.config file with: bower init
+10-install angular and angular mocks if they not already installed, include them in the specRunner.html file and in the karma config file
+using: bower install --save angular angular-mocks
+11-we are going to use omdpapi.com for our data.
+
+notes:
+-----
+-use angular.mock.module to configure mocked modules
+-use angular.mock.inject to load mocked modules, services, etc.... this will bootstrab the application allowing us 
+to get instances of any thing in the modules that has been configured by the application by name
+-it will load in sequence Angular -> ngMock -> all configured modules
+- _[something]_ naming convention if we passed the function name x or _x_ , the inject will try to load something called x from the
+pre-configured module.

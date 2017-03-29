@@ -1,0 +1,28 @@
+{
+  "name": "angularunittests",
+  "description": "practicing using jasmine and karma for angular unit tests",
+  "main": "index.js",
+  "authors": [
+    "abdelwahab sadek"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "karama",
+    "jasmine",
+    "angular",
+    "unit-tests"
+  ],
+  "homepage": "https://github.com/AbdelwahabMohamed/AngularUnitTests",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-mocks": "^1.6.3",
+    "angular": "^1.6.3"
+  }
+}
