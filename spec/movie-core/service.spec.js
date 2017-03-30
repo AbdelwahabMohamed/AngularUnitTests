@@ -1,13 +1,15 @@
 describe('MovieCore', function () {
     var PopularMovies,
-        $httpBackend;
-
+        $httpBackend,
+        movie = {
+            movieId: 'tt0076759',
+            description: 'pla pla pla'
+        };
     beforeEach(module('movieCore'));
     beforeEach(inject(function (_PopularMovies_, _$httpBackend_) {
         PopularMovies = _PopularMovies_;
         $httpBackend = _$httpBackend_;
     }));
-
     afterEach(function () {
         $httpBackend.verifyNoOutstandingExpectation();
         $httpBackend.verifyNoOutstandingRequest();
@@ -16,16 +18,12 @@ describe('MovieCore', function () {
     it('should create popular movie', function () {
         //arrange
         //'{"movieId":"tt0076759","describtion":"pla pla pla"}'
-        var movieId = 'tt0076759';
         var expectedData = function (data) {
-            return angular.fromJson(data).movieId === movieId;
+            return angular.fromJson(data).movieId === movie.movieId;
         };
         $httpBackend.expectPOST(/./, expectedData).respond(201);
 
-        var popularmovie = new PopularMovies({
-            movieId: movieId,
-            describtion: 'pla pla pla'
-        });
+        var popularmovie = new PopularMovies(movie);
         //act
         popularmovie.$save();
         //assert
@@ -33,21 +31,17 @@ describe('MovieCore', function () {
     });
 
     it('should get popular movie by id', function () {
-        //arrange
-        var movieId = 'tt0076759';
+        //arrange        
         //'popular/tt0076759'
         $httpBackend.expectGET('popular/tt0076759').respond(200);
         //act
-        PopularMovies.get({
-            movieId: movieId
-        });
+        PopularMovies.get({movieId : 'tt0076759'});
         //assert
         expect($httpBackend.flush).not.toThrow();
     });
 
     it('should update popular movie', function () {
         //arrange
-        var movieId = 'tt0076759';
         //'{"movieId":"tt0076759","describtion":"pla pla pla updated"}'
         var expectedData = function (data) {
             return angular.fromJson(data).describtion === 'pla pla pla updated';
@@ -55,7 +49,7 @@ describe('MovieCore', function () {
         $httpBackend.expectPUT('popular', expectedData).respond(200);
 
         var popularMovie = new PopularMovies({
-            movieId: movieId,
+            movieId: movie.movieId,
             describtion: 'pla pla pla updated'
         });
 
@@ -65,13 +59,10 @@ describe('MovieCore', function () {
         //assert
         expect($httpBackend.flush).not.toThrow();
     });
+   
     it('should set authenticate headers correctly', function () {
         //{"authToken":"x","Accept":"application/json, text/plain, */*"}
         //arrange
-        var movie = {
-            movieId: 'tt0076759',
-            description: 'pla pla pla'
-        };
         var expectedAuthToken = function (headers) {
             return angular.fromJson(headers).authToken === 'x';
         };
@@ -83,12 +74,8 @@ describe('MovieCore', function () {
         $httpBackend.expectDELETE(matchAny, expectedAuthToken).respond(200);
 
         //act
-        PopularMovies.query({
-            id: movie.movieId
-        });
-        PopularMovies.get({
-            id: movie.movieId
-        });
+        PopularMovies.query();
+        PopularMovies.get(movie);
         new PopularMovies(movie).$save();
         new PopularMovies(movie).$update();
         new PopularMovies(movie).$remove();
