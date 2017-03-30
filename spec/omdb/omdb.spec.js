@@ -20,7 +20,7 @@ describe('omdb service', function () {
                 "Value": "8.7/10"
             }, {
                 "Source": "Rotten Tomatoes",
-                "Value": "93%" 
+                "Value": "93%"
             }, {
                 "Source": "Metacritic",
                 "Value": "92/100"
@@ -90,7 +90,6 @@ describe('omdb service', function () {
         var response,
             id = 'tt0076759',
             url = baseUrl + 'i=' + encodeURIComponent(id);
-            console.log(url);
         $httpBackend.when('GET', url).respond(200, movieDataById);
         //act
         omdbApi.searchById(id).then(function (data) {
@@ -99,5 +98,24 @@ describe('omdb service', function () {
         $httpBackend.flush();
         //assert
         expect(response.data).toEqual(movieDataById);
+    });
+
+    it('should return error', function () {
+        //arrange
+        var response,
+            id = 'tt0076759',
+            url = baseUrl + 'i=' + encodeURIComponent(id);
+        $httpBackend.when('GET', url).respond(500);
+        //act
+        omdbApi.searchById(id)
+        .then(function (data) {
+            response = 'data';
+        })
+        .catch(function () {
+            response ='error';
+        });
+        $httpBackend.flush();
+        //assert
+        expect(response).toEqual('error');
     });
 });

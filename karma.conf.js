@@ -1,7 +1,7 @@
 // Karma configuration
 // Generated on Wed Mar 29 2017 09:29:46 GMT+0200 (W. Europe Daylight Time)
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -10,27 +10,27 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
-
+    frameworks: ['bower', 'jasmine'],
+    bowerPackages: [
+      'angular',
+      'angular-resource',
+      'angular-mocks'
+    ],
 
     // list of files / patterns to load in the browser
-    files: [//TODO: replace with the correct glop patterns for all libraries
-      'bower_components/angular/angular.js',
-      'bower_components/angular-mocks/angular-mocks.js',
+    files: [ //TODO: replace with the correct glop patterns for all libraries         
       'src/**/*.js',
       'spec/**/*.js'
     ],
 
 
     // list of files to exclude
-    exclude: [
-    ],
+    exclude: [],
 
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-    },
+    preprocessors: {},
 
 
     // test results reporter to use

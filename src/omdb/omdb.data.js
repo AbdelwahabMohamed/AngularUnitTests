@@ -10,18 +10,14 @@
                 var deferred = $q.defer();
                 $http.get(url)
                     .then(function (data) {
-                        console.log('in success: ' + data);
                         deferred.resolve(data);
                     })
                     .catch(function (error) {
-                        console.log('in error');
-                    })
-                    .then(function (data) {
-                        console.log('in finally');
+                       deferred.reject();
                     });
                 return deferred.promise;
             }
-            
+
             service.search = function (query) {
                 var uri = baseUrl + 't=' + encodeURIComponent(query);
                 return httpPromise(uri);
@@ -31,8 +27,6 @@
                 var uri = baseUrl + 'i=' + encodeURIComponent(id);
                 return httpPromise(uri);
             };
-
-
             return service;
         });
 })();
