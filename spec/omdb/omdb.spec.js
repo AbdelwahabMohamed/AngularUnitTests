@@ -20,7 +20,7 @@ describe('omdb service', function () {
                 "Value": "8.7/10"
             }, {
                 "Source": "Rotten Tomatoes",
-                "Value": "93%"
+                "Value": "93%" 
             }, {
                 "Source": "Metacritic",
                 "Value": "92/100"
@@ -76,13 +76,11 @@ describe('omdb service', function () {
             searchString = 'star wars',
             url = baseUrl + 't=' + encodeURIComponent(searchString);
         $httpBackend.when('GET', url).respond(200, movieData);
-
         //act
         omdbApi.search(searchString).then(function (data) {
             response = data;
         });
         $httpBackend.flush(); //resolve all calls
-
         //assert
         expect(response.data).toEqual(movieData);
     });
