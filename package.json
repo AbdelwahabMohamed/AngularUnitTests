@@ -28,5 +28,8 @@
     "karma-bower": "^1.0.1",
     "karma-chrome-launcher": "^2.0.0",
     "karma-jasmine": "^1.1.0"
+  },
+  "dependencies": {
+    "express": "^4.15.2"
   }
 }

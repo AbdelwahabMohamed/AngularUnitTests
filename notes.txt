@@ -16,3 +16,11 @@ configured expectations and responses.
 
 
 -ngMock cotroller service $controller(constructor, locals, [bindings])
+    -constructor can be a string to get an instance by name, or an inline function, which will help us brain storm the unit tests first  then actually create them.
+    -locals: local variables required by the controller
+    -bindings: object allows us to  set "this" values when using the controllerAs approach
+-when mocking the controller, any ANGULARSERVICES required by the controller will be resolved automatically, we don`t have to pass it explicitly
+    so  _$controller_('SearchController', {$scope: $scope, $location: $location });
+    and _$controller_('SearchController', {$scope: $scope}); are the same
+-controllerAs approach, review john papa`s answer on stackoverflow: http://stackoverflow.com/questions/16619740/angular-should-i-use-this-or-scope/19940503#19940503
+-Angular has anevent cycle for resolving promises, $rootScope.$apply() will start the chain to resolve promises, in browser, angular takes care of this implicitly.
