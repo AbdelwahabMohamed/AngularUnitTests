@@ -13,3 +13,6 @@ that means we have to configure the mocked backend provider ourselves.
 configured expectations and responses.
 
 -jasmine afterEach -> verifyNoOutstandingRequest() to make sure that all the http calls were flushed successfully.
+
+
+-ngMock cotroller service $controller(constructor, locals, [bindings])
