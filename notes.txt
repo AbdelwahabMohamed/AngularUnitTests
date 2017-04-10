@@ -14,6 +14,7 @@ configured expectations and responses.
 
 -jasmine afterEach -> verifyNoOutstandingRequest() to make sure that all the http calls were flushed successfully.
 
+-To Run node server node index.js
 
 -ngMock cotroller service $controller(constructor, locals, [bindings])
     -constructor can be a string to get an instance by name, or an inline function, which will help us brain storm the unit tests first  then actually create them.
@@ -23,4 +24,4 @@ configured expectations and responses.
     so  _$controller_('SearchController', {$scope: $scope, $location: $location });
     and _$controller_('SearchController', {$scope: $scope}); are the same
 -controllerAs approach, review john papa`s answer on stackoverflow: http://stackoverflow.com/questions/16619740/angular-should-i-use-this-or-scope/19940503#19940503
--Angular has anevent cycle for resolving promises, $rootScope.$apply() will start the chain to resolve promises, in browser, angular takes care of this implicitly.
+-Angular has an event cycle for resolving promises, $rootScope.$apply() will start the chain to resolve promises, in browser, angular takes care of this implicitly.

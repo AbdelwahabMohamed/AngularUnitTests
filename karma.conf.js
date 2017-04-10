@@ -14,6 +14,7 @@ module.exports = function (config) {
     bowerPackages: [
       'angular',
       'angular-resource',
+      'angular-bootstrap',
       'angular-mocks'
     ],
 
