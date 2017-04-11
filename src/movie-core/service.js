@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    angular.module('movieCore', ['ngResource'])
+    angular.module('movieCore')
         .factory('PopularMovies', function ($resource) {
             var token = 'x';
             return $resource('popular/:movieId', {

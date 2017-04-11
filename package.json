@@ -23,6 +23,9 @@
   },
   "homepage": "https://github.com/AbdelwahabMohamed/AngularUnitTests#readme",
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-inject": "^4.2.0",
+    "gulp-load-plugins": "^1.5.0",
     "jasmine": "^2.5.3",
     "karma": "^1.5.0",
     "karma-bower": "^1.0.1",

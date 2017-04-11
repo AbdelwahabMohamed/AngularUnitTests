@@ -1,0 +1,5 @@
+Using Gulp-inject for injecting script tags within the html files
+=================================================================
+-use npm to install the following dev-depemndencies: gulp gulp-inject gulp-load-plugins, make sure they are added to package.json
+-create the gulpfile.js and write the inject task
+-run gulp inject

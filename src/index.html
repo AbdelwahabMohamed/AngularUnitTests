@@ -3,6 +3,8 @@
 
 <head>
     <title>Movie app</title>
+    <!-- inject:css -->
+    <!-- endinject -->
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <style type="text/css">
         .container {
@@ -47,14 +49,40 @@
     <script type="text/javascript" src="/bower_components/angular-route/angular-route.js"></script>
     <script type="text/javascript" src="/bower_components/angular-resource/angular-resource.js"></script>
     <script type="text/javascript" src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <!--directives-->
-    <script type="text/javascript" src="/lib/angular-ui/directives/accordion.js"></script>
-    <!--js app-->
-    <script type="text/javascript" src="/movie-app/app.module.js"></script>
-    <script type="text/javascript" src="/omdb/omdb.data.js"></script>
-    <script type="text/javascript" src="/movie-app/results.controller.js"></script>
-    <script type="text/javascript" src="/movie-app/search.controller.js"></script>
+    <!-- inject:js -->
+
+    <script src="/src/movie-app/app.module.js"></script>
+
+    <script src="/src/movie-app/customDirectives.module.js"></script>
+
+    <script src="/src/movie-core/movieCore.module.js"></script>
+
+    <script src="/src/movie-app/results.controller.js"></script>
+
+    <script src="/src/movie-app/search.controller.js"></script>
+
+    <script src="/src/movie-core/service.js"></script>
+
+    <script src="/src/omdb/omdb.data.js"></script>
+
+    <script src="/lib/angular-ui/directives/accordion.js"></script>
+
+    <script src="/lib/Jasmine-content/boot.js"></script>
+
+    <script src="/lib/Jasmine-content/console.js"></script>
+
+    <script src="/lib/Jasmine-content/jasmine-html.js"></script>
+
+    <script src="/lib/Jasmine-content/jasmine.js"></script>
+
+    <!-- endinject -->  
 
 </body>
 
 </html>
+
+    <!--<script type="text/javascript" src="/lib/angular-ui/directives/accordion.js"></script>    
+    <script type="text/javascript" src="/movie-app/app.module.js"></script>
+    <script type="text/javascript" src="/omdb/omdb.data.js"></script>
+    <script type="text/javascript" src="/movie-app/results.controller.js"></script>
+    <script type="text/javascript" src="/movie-app/search.controller.js"></script>-->
