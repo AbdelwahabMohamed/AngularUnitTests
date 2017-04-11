@@ -32,6 +32,10 @@ gulp.task('lint', function () {
         .pipe($.jshint.reporter('fail'));
 
 });
+gulp.task('watch', function() {
+  gulp.watch(config.js, ['lint']);
+});
+
 ////////////////////
 function log(msg) {
     if (typeof (msg) === 'object') {
