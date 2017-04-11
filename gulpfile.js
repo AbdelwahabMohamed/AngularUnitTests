@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var config = require('./gulp.config')();
 var bowerFiles = require('main-bower-files');
 var $ = require('gulp-load-plugins')({
     lazy: true
@@ -6,14 +7,14 @@ var $ = require('gulp-load-plugins')({
 
 gulp.task('inject', function () {
     log("starting inject");
-    return gulp.src('src/index.html')
+    return gulp.src(config.index)
         .pipe($.inject(gulp.src(bowerFiles(), {
             read: false
         }), {
             name: 'bower'
         }))
-        .pipe($.inject(gulp.src(['./src/**/*.module.js', './src/**/*.js', './lib/**/**/jasmine.js', './lib/**/**/jasmine-*.js','./lib/**/**/*.js'], {read: false}), {relative: true}))
-        .pipe(gulp.dest('src'));
+        .pipe($.inject(gulp.src(config.js, {read: false}), {relative: true}))
+        .pipe(gulp.dest(config.src));
 });
 
 ////////////////////
