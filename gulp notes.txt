@@ -1,0 +1,15 @@
+Using Gulp-inject for injecting script tags within the html files
+=================================================================
+-use npm to install the following dev-dependencies: gulp gulp-inject gulp-load-plugins, make sure they are added to package.json
+-create the gulpfile.js and write the inject task
+-run gulp inject
+
+Using main-bower-files for bower dependencies
+=============================================
+- npm install main-bower-files --save-dev
+-pipe it to ad dteh bower installed dependencies
+
+Using gulp-jscs  gulp-jshint to lint the code
+=============================================
+npm install --save-dev  jshint gulp-jscs gulp-jshint jshint-stylish
+add the .jscs and the .jshint files from any online provider
