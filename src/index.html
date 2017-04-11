@@ -3,7 +3,8 @@
 
 <head>
     <title>Movie app</title>
-    <!-- inject:css -->
+    <!-- bower:css -->
+    <!-- bower installed css files will go here... -->
     <!-- endinject -->
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <style type="text/css">
@@ -39,8 +40,8 @@
         </div>
     </div>
 
-    <!--js 3rd party-->
-    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
+    <!--js 3rd party  replace by gulp-inject bower inject-->
+    <!--<script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="/bower_components/angular-animate/angular-animate.js"></script>
@@ -48,41 +49,67 @@
     <script type="text/javascript" src="/bower_components/angular-touch/angular-touch.js"></script>
     <script type="text/javascript" src="/bower_components/angular-route/angular-route.js"></script>
     <script type="text/javascript" src="/bower_components/angular-resource/angular-resource.js"></script>
-    <script type="text/javascript" src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>-->
+
+    <!-- bower:js -->
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endinject -->
+
+
     <!-- inject:js -->
 
-    <script src="/src/movie-app/app.module.js"></script>
 
-    <script src="/src/movie-app/customDirectives.module.js"></script>
+    <script src="movie-core/movieCore.module.js"></script>
 
-    <script src="/src/movie-core/movieCore.module.js"></script>
 
-    <script src="/src/movie-app/results.controller.js"></script>
+    <script src="movie-app/app.module.js"></script>
 
-    <script src="/src/movie-app/search.controller.js"></script>
 
-    <script src="/src/movie-core/service.js"></script>
+    <script src="movie-app/customDirectives.module.js"></script>
 
-    <script src="/src/omdb/omdb.data.js"></script>
 
-    <script src="/lib/angular-ui/directives/accordion.js"></script>
+    <script src="movie-core/service.js"></script>
 
-    <script src="/lib/Jasmine-content/boot.js"></script>
 
-    <script src="/lib/Jasmine-content/console.js"></script>
+    <script src="movie-app/results.controller.js"></script>
 
-    <script src="/lib/Jasmine-content/jasmine-html.js"></script>
 
-    <script src="/lib/Jasmine-content/jasmine.js"></script>
+    <script src="movie-app/search.controller.js"></script>
 
-    <!-- endinject -->  
 
-</body>
+    <script src="omdb/omdb.data.js"></script>
 
-</html>
 
-    <!--<script type="text/javascript" src="/lib/angular-ui/directives/accordion.js"></script>    
+    <script src="../lib/Jasmine-content/jasmine.js"></script>
+
+
+    <script src="../lib/Jasmine-content/jasmine-html.js"></script>
+
+
+    <script src="../lib/Jasmine-content/boot.js"></script>
+
+
+    <script src="../lib/Jasmine-content/console.js"></script>
+
+
+    <script src="../lib/angular-ui/directives/accordion.js"></script>
+
+
+    <!-- endinject -->
+
+    <!--<script type="text/javascript" src="/lib/angular-ui/directives/accordion.js"></script>    replace by gulp-inject
     <script type="text/javascript" src="/movie-app/app.module.js"></script>
     <script type="text/javascript" src="/omdb/omdb.data.js"></script>
     <script type="text/javascript" src="/movie-app/results.controller.js"></script>
     <script type="text/javascript" src="/movie-app/search.controller.js"></script>-->
+</body>
+
+</html>
