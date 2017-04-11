@@ -19,7 +19,7 @@ module.exports = function (config) {
     ],
 
     // list of files / patterns to load in the browser
-    files: [ //TODO: replace with the correct glop patterns for all libraries         
+    files: [
       'src/**/*.js',
       'spec/**/*.js'
     ],

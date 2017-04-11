@@ -7,7 +7,7 @@
             var baseUrl = 'http://www.omdbapi.com/?';
 
             function httpPromise(url) {
-                var deferred = $q.defer();
+                var deferred = $q.defer();                
                 $http.get(url)
                     .then(function (data) {
                         deferred.resolve(data);
@@ -19,7 +19,7 @@
             }
 
             service.search = function (query) {
-                var uri = baseUrl + 't=' + encodeURIComponent(query);
+                var uri = baseUrl + 's=' + encodeURIComponent(query);
                 return httpPromise(uri);
             };
 

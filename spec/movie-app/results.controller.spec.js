@@ -55,7 +55,7 @@ describe('Results controller', function () {
         expect(omdbApi.search).toHaveBeenCalledWith('star wars');
     });
 
-        it('should load result search', function () {
+        it('should return error message', function () {
         spyOn(omdbApi, 'search').and.callFake(function(){
             var deffered = $q.defer();
             deffered.reject();

@@ -2,7 +2,7 @@
 <html ng-app="movieApp">
 
 <head>
-    <title>Movie app</title>    
+    <title>Movie app</title>
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <style type="text/css">
         .container {
@@ -10,7 +10,7 @@
         }
     </style>
 </head>
- 
+
 <body>
     <div class="header">
         <div class="container">
@@ -28,23 +28,32 @@
             </div>
         </div>
     </div>
-    <div class="container"></div>
+    <div class="container">
+        <div ng-view=""></div>
+    </div>
     <div class="footer">
         <div class="container">
-            <p> any copy rights @pla 2017</p>
+            <p> AbdelwahabSadek walk through for angular unit testing</p>
         </div>
     </div>
 
-    <!--scripts-->
+    <!--js 3rd party-->
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-touch/angular-touch.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-resource/angular-resource.js"></script>
     <script type="text/javascript" src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    
+    <!--directives-->
+    <script type="text/javascript" src="/lib/angular-ui/directives/accordion.js"></script>
+    <!--js app-->
     <script type="text/javascript" src="/movie-app/app.module.js"></script>
     <script type="text/javascript" src="/omdb/omdb.data.js"></script>
-
     <script type="text/javascript" src="/movie-app/results.controller.js"></script>
     <script type="text/javascript" src="/movie-app/search.controller.js"></script>
-
 
 </body>
 

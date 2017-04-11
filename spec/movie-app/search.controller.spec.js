@@ -23,3 +23,12 @@ describe('Search Controller', function () {
         expect($location.url()).toBe('');
     });
 });
+
+/*using jasmine with the controller-as approach
+    it('should redirect to the query results page for non-empty query', function () {
+        $this = _$controller_('SearchController', { $location: $location }, {query : star wars});
+        $this.query = 'plapla'
+        ........................
+    });
+
+ */
