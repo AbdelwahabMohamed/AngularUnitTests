@@ -5,6 +5,7 @@ var $ = require('gulp-load-plugins')({
 });
 
 gulp.task('inject', function () {
+    log("starting inject");
     return gulp.src('src/index.html')
         .pipe($.inject(gulp.src(bowerFiles(), {
             read: false
@@ -14,3 +15,16 @@ gulp.task('inject', function () {
         .pipe($.inject(gulp.src(['./src/**/*.module.js', './src/**/*.js', './lib/**/**/jasmine.js', './lib/**/**/jasmine-*.js','./lib/**/**/*.js'], {read: false}), {relative: true}))
         .pipe(gulp.dest('src'));
 });
+
+////////////////////
+function log(msg) {
+    if (typeof (msg) === 'object') {
+        for (var item in msg) {
+            if (msg.hasOwnProperty(item)) {
+                $.util.log($.util.colors.blue(msg[item]));
+            }
+        }
+    } else {
+        $.util.log($.util.colors.blue(msg));
+    }
+}
