@@ -74,10 +74,10 @@ describe('omdb service', function () {
         //arrange
         var response = null,
             searchString = 'star wars',
-            url = baseUrl + 't=' + encodeURIComponent(searchString);
+            url = baseUrl + 's=' + encodeURIComponent(searchString);
         $httpBackend.when('GET', url).respond(200, movieData);
         //act
-        omdbApi.search(searchString).then(function (data) {
+        omdbApi.search(searchString).then(function (data) {            
             response = data;
         });
         $httpBackend.flush(); //resolve all calls

@@ -15,13 +15,18 @@ module.exports = function (config) {
       'angular',
       'angular-resource',
       'angular-bootstrap',
+      'angular-route',
+      'angular-touch',
+      'angular-animate',
+      'angular-sanitize',
       'angular-mocks'
     ],
 
     // list of files / patterns to load in the browser
     files: [
       'src/**/*.js',
-      'spec/**/*.js'
+      'spec/**/*.js',
+      'lib/angular-ui/directives/accordion.js'
     ],
 
 
