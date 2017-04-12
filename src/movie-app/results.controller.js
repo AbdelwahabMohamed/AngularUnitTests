@@ -7,15 +7,15 @@
                 $scope.results = response.data.Search;
             } else {
                 $scope.errorMessage = response.data.Error;
-                alert(response.data.Error);
+                window.alert(response.data.Error);
             }
         }).catch(function (response) {
             if (response && response.data && response.data.Error) {
-                alert(response.data.Error);
+                window.alert(response.data.Error);
                 $scope.errorMessage = response.data.Error;
             }else{
                  $scope.errorMessage='something went wrong dumdum';
             }
         });
-    }); 
+    });
 })();  

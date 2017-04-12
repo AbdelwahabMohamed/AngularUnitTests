@@ -32,8 +32,11 @@ gulp.task('lint', function () {
         .pipe($.jshint.reporter('fail'));
 
 });
-gulp.task('watch', function() {
-  gulp.watch(config.js, ['lint']);
+
+gulp.task('watch', function () {
+    gulp.watch(config.js, ['lint']).on('change', function (event) {
+        changeHandler(event);
+    });
 });
 
 ////////////////////
@@ -47,4 +50,9 @@ function log(msg) {
     } else {
         $.util.log($.util.colors.blue(msg));
     }
+}
+
+function changeHandler(event) {
+    var srcPattern = new RegExp('/.*(?=/' + config.source + ')/');
+    log('file ' + event.path.replace(srcPattern, '') + ' ' + event.type);
 }

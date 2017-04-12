@@ -5,5 +5,5 @@ angular.module('movieApp', ['ui.bootstrap', 'ngRoute', 'ngTouch', 'ngAnimate', '
             controller: 'ResultsController'
         }).otherwise({
             redirectTo: '/'
-        });
-    });
+        }); 
+    }); 
